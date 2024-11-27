@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronograma de Estudo</title>
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <body>
+        <header>
+            <div  class="header-logo">
+                <img src="img/logo.jpg" alt="Logo do site">
+                <h1>StudyTrack</h1>
+            </div>
+            <nav>
+                <div class="menu-icon" onclick="toggleMenu()">☰</div>
+                <ul id="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="login.html">Conta</a></li>
+                    <li><a href="crongrama.html">Cronograma</a></li>
+                    <li><a href="desafios.html">Desafios</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="container">
+
+            <section class="content-box">
+                <section class="schedule-form">
+                    <h2>Adicionar Atividade de Estudo</h2>
+                    <form id="study-form">
+                        <label for="day">Dia da Semana:</label>
+                        <select id="day">
+                            <option value="Segunda-feira">Segunda-feira</option>
+                            <option value="Terça-feira">Terça-feira</option>
+                            <option value="Quarta-feira">Quarta-feira</option>
+                            <option value="Quinta-feira">Quinta-feira</option>
+                            <option value="Sexta-feira">Sexta-feira</option>
+                            <option value="Sábado">Sábado</option>
+                            <option value="Domingo">Domingo</option>
+                        </select>
+
+                        <label for="hours">Horas de Estudo:</label>
+                        <input type="number" id="hours" min="1" max="24" placeholder="Ex: 2" required>
+
+                        <label for="activity">Atividade:</label>
+                        <input type="text" id="activity" placeholder="Ex: Matemática" required>
+
+                        <button type="submit">Adicionar ao Cronograma</button>
+                    </form>
+                </section>
+            </section>
+            <section class="content-box">
+                <section class="schedule-table">
+                    <h2>Cronograma Semanal</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dia da Semana</th>
+                                <th>Atividade</th>
+                                <th>Horas de Estudo</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="schedule-body">
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+
+
+        </main>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-content">
+                    <p>&copy; 2024. Todos os direitos reservados.</p>
+                    <p>&copy; Made by Gabriel de Morais Lacerda</p>
+                    <ul class="social-links">
+                        <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+        <script>
+            // script.js
+
+            document.getElementById('study-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const day = document.getElementById('day').value;
+                const hours = document.getElementById('hours').value;
+                const activity = document.getElementById('activity').value;
+
+                addActivityToSchedule(day, hours, activity);
+
+                document.getElementById('study-form').reset();
+            });
+
+            function addActivityToSchedule(day, hours, activity) {
+                const scheduleBody = document.getElementById('schedule-body');
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+        <td>${day}</td>
+        <td>${activity}</td>
+        <td>${hours} horas</td>
+        <td class="actions"><button onclick="removeActivity(this)">Remover</button></td>`;
+                scheduleBody.appendChild(row);
+            }
+
+            function removeActivity(button) {
+                const row = button.parentNode.parentNode;
+                row.remove();
+            }
+
+        </script>
+    </body>
+
+</html>

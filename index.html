@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div href="index.html" class="header-logo">
+            <img src="img/logo.jpg" alt="Logo do site">
+            <h1>StudyTrack</h1>
+        </div>
+        <nav>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <ul id="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="login.html">Conta</a></li>
+                <li><a href="crongrama.html">Cronograma</a></li>
+                <li><a href="desafios.html">Desafios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="content-box">
+            <p>Somos a equipe FocusT e temos o prazer de apresentar o StudyTrack, um aplicativo inovador para ajudar
+                estudantes a organizar seus estudos, alcançar metas e melhorar sua produtividade com técnicas eficazes e
+                personalizadas.</p>
+            <p>Muitos estudantes têm dificuldade em manter uma rotina de estudos organizada e produtiva. Isso leva à
+                procrastinação, baixa eficiência e resultados acadêmicos insatisfatórios.</p>
+            <p>O StudyTrack combina metas de estudo, cronogramas personalizados e feedback contínuo. Utilizando técnicas
+                como Pomodoro e mapas mentais, aliado a um sistema de recompensas, o aplicativo engaja o usuário e
+                melhora sua rotina de estudos de forma prática e motivadora.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <p>&copy; 2024. Todos os direitos reservados.</p>
+                <p>&copy; Made by Gabriel de Morais Lacerda</p>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // script.js
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+    </script>
+</body>
+
+</html>

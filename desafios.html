@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafios - Página de Matérias</title>
+    <link rel="stylesheet" href="css/style3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilo geral */
+
+        header {
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin-left: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Estilo das abas */
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .tabs button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            background-color: #f3f3f3;
+            border: none;
+            border-radius: 5px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+        .tabs button.active,
+        .tabs button:hover {
+            background-color: #a3ffae;
+        }
+
+        /* Estilo dos content-box */
+        .content-box {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 900px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .questions {
+            margin-top: 20px;
+        }
+
+        .question-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-box p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .question-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .question-box li {
+            margin: 8px 0;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-logo">
+                <img src="img/logo.jpg" alt="Logo do site">
+                <h1>StudyTrack</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="login.html">Conta</a></li>
+                <li><a href="crongrama.html">Cronograma</a></li>
+                <li><a href="desafios.html">Desafios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="content-box">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab(event, 'portugues')">Língua Portuguesa</button>
+                <button class="tab-btn" onclick="showTab(event, 'matematica')">Matemática</button>
+                <button class="tab-btn" onclick="showTab(event, 'historia')">História</button>
+                <button class="tab-btn" onclick="showTab(event, 'geografia')">Geografia</button>
+                <button class="tab-btn" onclick="showTab(event, 'ciencias')">Ciências</button>
+                <button class="tab-btn" onclick="showTab(event, 'ingles')">Inglês</button>
+            </div>
+        </section>
+        <section class="content-box">
+            <h2>Desafios - Escolha uma Matéria</h2>
+
+            <!-- Perguntas de cada matéria -->
+            <div id="portugues" class="tab-content active questions">
+                <!-- Exemplo de perguntas -->
+                <div class="question-box">
+                    <p>1. O que é sujeito na oração?</p>
+                    <ul>
+                        <li><input type="radio" name="portugues1"> Identifica a ação do verbo.</li>
+                        <li><input type="radio" name="portugues1"> Realiza a ação do verbo.</li>
+                        <li><input type="radio" name="portugues1"> Modifica um adjetivo.</li>
+                    </ul>
+                </div>
+                <div class="question-box">
+                    <p>1. O que é sujeito na oração?</p>
+                    <ul>
+                        <li><input type="radio" name="portugues1"> Identifica a ação do verbo.</li>
+                        <li><input type="radio" name="portugues1"> Realiza a ação do verbo.</li>
+                        <li><input type="radio" name="portugues1"> Modifica um adjetivo.</li>
+                    </ul>
+                </div>
+                <div class="question-box">
+                    <p>1. O que é sujeito na oração?</p>
+                    <ul>
+                        <li><input type="radio" name="portugues1"> Identifica a ação do verbo.</li>
+                        <li><input type="radio" name="portugues1"> Realiza a ação do verbo.</li>
+                        <li><input type="radio" name="portugues1"> Modifica um adjetivo.</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="matematica" class="tab-content questions">
+                <div class="question-box">
+                    <p>1. Quanto é 2 + 3?</p>
+                    <ul>
+                        <li><input type="radio" name="matematica1"> 4</li>
+                        <li><input type="radio" name="matematica1"> 5</li>
+                        <li><input type="radio" name="matematica1"> 6</li>
+                    </ul>
+                </div>
+                <div class="question-box">
+                    <p>1. Quanto é 2 + 3?</p>
+                    <ul>
+                        <li><input type="radio" name="matematica1"> 4</li>
+                        <li><input type="radio" name="matematica1"> 5</li>
+                        <li><input type="radio" name="matematica1"> 6</li>
+                    </ul>
+                </div>
+                <div class="question-box">
+                    <p>1. Quanto é 2 + 3?</p>
+                    <ul>
+                        <li><input type="radio" name="matematica1"> 4</li>
+                        <li><input type="radio" name="matematica1"> 5</li>
+                        <li><input type="radio" name="matematica1"> 6</li>
+                    </ul>
+                </div>
+            </div>
+            <!---->
+            <div id="historia" class="tab-content questions">
+                <div class="question-box">
+                    <p>1. Qual foi o ano do descobrimento do Brasil?</p>
+                    <ul>
+                        <li><input type="radio" name="historia1"> 1500</li>
+                        <li><input type="radio" name="historia1"> 1492</li>
+                        <li><input type="radio" name="historia1"> 1808</li>
+                    </ul>
+                </div>
+                <div class="question-box">
+                    <p>1. Qual foi o ano do descobrimento do Brasil?</p>
+                    <ul>
+                        <li><input type="radio" name="historia1"> 1500</li>
+                        <li><input type="radio" name="historia1"> 1492</li>
+                        <li><input type="radio" name="historia1"> 1808</li>
+                    </ul>
+                </div>
+                <div class="question-box">
+                    <p>1. Qual foi o ano do descobrimento do Brasil?</p>
+                    <ul>
+                        <li><input type="radio" name="historia1"> 1500</li>
+                        <li><input type="radio" name="historia1"> 1492</li>
+                        <li><input type="radio" name="historia1"> 1808</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="geografia" class="tab-content questions">
+                <div class="question-box">
+                    <p>1. Qual é o maior continente do mundo?</p>
+                    <ul>
+                        <li><input type="radio" name="geografia1"> África</li>
+                        <li><input type="radio" name="geografia1"> Ásia</li>
+                        <li><input type="radio" name="geografia1"> Europa</li>
+                    </ul>
+                </div>
+                <div class="question-box">
+                    <p>1. Qual é o maior continente do mundo?</p>
+                    <ul>
+                        <li><input type="radio" name="geografia1"> África</li>
+                        <li><input type="radio" name="geografia1"> Ásia</li>
+                        <li><input type="radio" name="geografia1"> Europa</li>
+                    </ul>
+                </div>
+                <div class="question-box">
+                    <p>1. Qual é o maior continente do mundo?</p>
+                    <ul>
+                        <li><input type="radio" name="geografia1"> África</li>
+                        <li><input type="radio" name="geografia1"> Ásia</li>
+                        <li><input type="radio" name="geografia1"> Europa</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="ciencias" class="tab-content questions">
+                <div class="question-box">
+                    <p>1. O que é fotossíntese?</p>
+                    <ul>
+                        <li><input type="radio" name="ciencias1"> Processo de reprodução das plantas.</li>
+                        <li><input type="radio" name="ciencias1"> Processo de produção de energia nas plantas.</li>
+                        <li><input type="radio" name="ciencias1"> Processo de alimentação dos animais.</li>
+                    </ul>
+                </div>
+                <div class="question-box">
+                    <p>1. O que é fotossíntese?</p>
+                    <ul>
+                        <li><input type="radio" name="ciencias1"> Processo de reprodução das plantas.</li>
+                        <li><input type="radio" name="ciencias1"> Processo de produção de energia nas plantas.</li>
+                        <li><input type="radio" name="ciencias1"> Processo de alimentação dos animais.</li>
+                    </ul>
+                </div>
+                <div class="question-box">
+                    <p>1. O que é fotossíntese?</p>
+                    <ul>
+                        <li><input type="radio" name="ciencias1"> Processo de reprodução das plantas.</li>
+                        <li><input type="radio" name="ciencias1"> Processo de produção de energia nas plantas.</li>
+                        <li><input type="radio" name="ciencias1"> Processo de alimentação dos animais.</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="ingles" class="tab-content questions">
+                <div class="question-box">
+                    <p>1. Traduza "apple".</p>
+                    <ul>
+                        <li><input type="radio" name="ingles1"> Laranja</li>
+                        <li><input type="radio" name="ingles1"> Maçã</li>
+                        <li><input type="radio" name="ingles1"> Pera</li>
+                    </ul>
+                </div>
+                <div class="question-box">
+                    <p>1. Traduza "apple".</p>
+                    <ul>
+                        <li><input type="radio" name="ingles1"> Laranja</li>
+                        <li><input type="radio" name="ingles1"> Maçã</li>
+                        <li><input type="radio" name="ingles1"> Pera</li>
+                    </ul>
+                </div>
+                <div class="question-box">
+                    <p>1. Traduza "apple".</p>
+                    <ul>
+                        <li><input type="radio" name="ingles1"> Laranja</li>
+                        <li><input type="radio" name="ingles1"> Maçã</li>
+                        <li><input type="radio" name="ingles1"> Pera</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <p>&copy; 2024. Todos os direitos reservados.</p>
+                <p>&copy; Made by Gabriel de Morais Lacerda</p>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(event, tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
